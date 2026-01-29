@@ -250,5 +250,27 @@
             "eatTimeMod": 2.5,
             "incomeMod": 1.5
         }
+    },
+    {
+        "id": "evt_robbery",
+        "type": "DECISION",
+        "title": "強盜闖入！",
+        "desc": "一名蒙面歹徒闖入店內！『把錢交出來！否則我就把這間店砸了！』",
+        "weight": 5,
+        "minDay": 8,
+        "choices": [
+            {
+                "text": "把它打出去！",
+                "action": "robbery_fight"
+            },
+            {
+                "text": "破財消災 (-$500)",
+                "action": "robbery_pay"
+            },
+            {
+                "text": "報警處理",
+                "action": "robbery_police"
+            }
+        ]
     }
 ]

@@ -609,7 +609,21 @@ class View {
     showStore(msg = "使用賺取的金幣進行擴建或準備。", isError = false) {
         this.showOverlay("整備商店", msg, "開始下一日營業", () => {
             this.hideOverlay();
-            this.gameState.startGame();
+
+            // Check for Daily Event
+            let event = null;
+            if (this.gameState.triggerDailyEvent) {
+                event = this.gameState.triggerDailyEvent(this.gameState.day);
+            }
+
+            if (event) {
+                this.showEventModal(event, () => {
+                    this.hideOverlay();
+                    this.gameState.startGame();
+                });
+            } else {
+                this.gameState.startGame();
+            }
         });
 
         // If it's an error, highlight it
