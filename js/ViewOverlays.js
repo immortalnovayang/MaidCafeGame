@@ -10,18 +10,23 @@ View.prototype.showOverlay = function (title, contentHTML, btnText, btnCallback)
     }
 
     const h2 = this.dom.modalContent.querySelector('h2');
-    const p = this.dom.modalContent.querySelector('p');
+    const msgDiv = this.dom.modalContent.querySelector('#modal-message');
     const btn = document.getElementById('start-btn');
+    const continueBtn = document.getElementById('continue-btn');
     const contentDiv = this.dom.modalContent;
 
-    h2.innerText = title;
-    p.innerHTML = contentHTML;
+    if (continueBtn) continueBtn.style.display = 'none'; // Ensure continue button is hidden in other overlays
 
-    const specials = contentDiv.querySelectorAll('.special-content');
-    specials.forEach(el => el.remove());
+    // Clear initial intro if present
+    const extras = contentDiv.querySelectorAll('.special-content, .game-intro-brief');
+    extras.forEach(el => el.remove());
+
+    h2.innerText = title;
+    msgDiv.innerHTML = contentHTML;
 
     if (btnText) {
         btn.style.display = 'block';
+        btn.style.margin = '20px auto 0 auto'; // Center the button
         btn.innerText = btnText;
         // Direct assignment to avoid closure wrapping issues
         btn.onclick = btnCallback;

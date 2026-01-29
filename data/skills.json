@@ -5,7 +5,7 @@
         "type": "ACTIVE",
         "desc": "5 秒內移動速度提升 100%。",
         "cooldown": 20,
-        "staminaCost": 10,
+        "staminaCost": 5,
         "duration": 5,
         "activeEmoji": "⚡",
         "effect": {

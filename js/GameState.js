@@ -288,6 +288,121 @@ class GameState {
 
     subscribe(callback) { this.listeners.push(callback); }
     notify(event, data) { this.listeners.forEach(cb => cb(event, data)); }
+
+    serialize() {
+        return {
+            gold: this.gold,
+            day: this.day,
+            reputation: this.reputation,
+            week: this.week,
+            currentRent: this.currentRent,
+            rentShieldCount: this.rentShieldCount,
+            appliedUpgradeIds: this.appliedUpgradeIds,
+            purchasedStoreItems: this.purchasedStoreItems,
+            banishedIds: this.banishedIds,
+            victoryGoldGoal: this.victoryGoldGoal,
+            maxDays: this.maxDays,
+            autoCleanEnabled: this.autoCleanEnabled,
+            maids: this.maids.map(m => ({
+                id: m.id,
+                stamina: m.stamina,
+                employmentStatus: m.employmentStatus
+            })),
+            tables: this.tables.map(t => ({
+                id: t.id,
+                unlocked: t.unlocked
+            }))
+        };
+    }
+
+    hydrate(saveData) {
+        if (!saveData) return;
+
+        this.gold = saveData.gold;
+        this.day = saveData.day;
+        this.reputation = saveData.reputation;
+        this.week = saveData.week || 1;
+        this.currentRent = saveData.currentRent;
+        this.rentShieldCount = saveData.rentShieldCount || 0;
+        this.appliedUpgradeIds = saveData.appliedUpgradeIds || [];
+        this.purchasedStoreItems = saveData.purchasedStoreItems || {};
+        this.banishedIds = saveData.banishedIds || [];
+        this.victoryGoldGoal = saveData.victoryGoldGoal || 300000;
+        this.maxDays = saveData.maxDays || 30;
+        this.autoCleanEnabled = (saveData.autoCleanEnabled !== undefined) ? saveData.autoCleanEnabled : true;
+
+        // Restore Maids
+        if (saveData.maids && this.allMaidsData) {
+            this.maids = saveData.maids.map(mSave => {
+                const baseData = this.allMaidsData.find(d => d.id === mSave.id);
+                if (baseData) {
+                    const maid = new Maid(baseData);
+                    maid.stamina = mSave.stamina;
+                    maid.employmentStatus = mSave.employmentStatus;
+                    return maid;
+                }
+                return null;
+            }).filter(m => m !== null);
+        }
+
+        // Restore Tables
+        if (saveData.tables) {
+            saveData.tables.forEach(tSave => {
+                const table = this.tables.find(t => t.id === tSave.id);
+                if (table) {
+                    table.unlocked = tSave.unlocked;
+                }
+            });
+        }
+
+        // Re-apply permanent upgrades logic if necessary
+        // (Assuming applyUpgrade itself handles the logic, but if they are flags on GameState, 
+        // they need to be re-evaluated from appliedUpgradeIds)
+        this.reapplyUpgrades();
+
+        console.log("GameState hydrated from save data.");
+    }
+
+    reapplyUpgrades() {
+        // Reset dynamic flags modified by upgrades
+        this.interestRate = 0;
+        this.repInterestRate = 0;
+        this.trashBonus = 0;
+        this.staminaLossReduction = 0;
+        this.roomba = 0;
+        this.conveyorBelt = 0;
+        this.trashSpeedBoost = 0;
+        this.lowStaminaBuffMod = 0;
+        this.checkoutTimeMod = 0;
+
+        // Re-apply each upgrade ID
+        const uniqueIds = [...new Set(this.appliedUpgradeIds)];
+        const counts = {};
+        this.appliedUpgradeIds.forEach(id => counts[id] = (counts[id] || 0) + 1);
+
+        uniqueIds.forEach(id => {
+            // We need a subtle version of applyUpgrade that doesn't push to the array
+            const upgrade = this.upgradesList.find(u => u.id === id);
+            if (upgrade && upgrade.effect) {
+                // Repeat for each instance (stacking)
+                for (let i = 0; i < counts[id]; i++) {
+                    this.executeUpgradeEffect(upgrade.effect);
+                }
+            }
+        });
+    }
+
+    executeUpgradeEffect(effect) {
+        if (effect.type === 'INTEREST') this.interestRate = (this.interestRate || 0) + effect.value;
+        if (effect.type === 'REP_INTEREST') this.repInterestRate = (this.repInterestRate || 0) + effect.value;
+        if (effect.type === 'TRASH_RECYCLE') this.trashBonus = (this.trashBonus || 0) + effect.value;
+        if (effect.type === 'STAMINA_SAVE') this.staminaLossReduction = (this.staminaLossReduction || 0) + (effect.value * 25);
+        if (effect.type === 'ROOMBA') this.roomba = (this.roomba || 0) + 1;
+        if (effect.type === 'CONVEYOR') this.conveyorBelt = (this.conveyorBelt || 0) + 1;
+        if (effect.type === 'TRASH_SPEED') this.trashSpeedBoost = (this.trashSpeedBoost || 0) + effect.value;
+        if (effect.type === 'LOW_STAMINA_BUFF') this.lowStaminaBuffMod = (this.lowStaminaBuffMod || 0) + effect.value;
+        if (effect.type === 'CHECKOUT_SPEED') this.checkoutTimeMod = (this.checkoutTimeMod || 0) + effect.value;
+    }
 }
 
 // Attach Mixins

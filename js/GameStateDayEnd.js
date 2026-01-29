@@ -185,6 +185,9 @@ const GameStateDayEnd = {
         };
 
         this.notify('day_end', report);
+
+        // Auto-save at end of day
+        SaveManager.saveGame();
     },
 
     generateSocialFeed(avgRating) {

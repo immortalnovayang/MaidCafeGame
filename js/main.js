@@ -9,6 +9,44 @@ document.addEventListener('DOMContentLoaded', async () => {
     await gameState.init();
     view.init(gameState, gameLoop);
 
+    // Save/Load UI Logic
+    const startBtn = document.getElementById('start-btn');
+    const continueBtn = document.getElementById('continue-btn');
+
+    if (SaveManager.hasSave()) {
+        continueBtn.style.display = 'block';
+        continueBtn.style.margin = '0 auto 10px auto'; // Center the button
+        continueBtn.onclick = () => {
+            if (SaveManager.loadGame()) {
+                view.hideOverlay();
+                gameState.startGame();
+                // Refresh HUD because hydration might changed stats
+                view.updateHUD({
+                    time: gameState.time,
+                    gold: gameState.gold,
+                    day: gameState.day,
+                    rep: gameState.reputation,
+                    avgRating: gameState.getDailyAverageRating(),
+                    rentDay: Math.ceil(gameState.day / 7) * 7,
+                    rentAmount: gameState.currentRent
+                });
+            }
+        };
+
+        startBtn.onclick = () => {
+            if (confirm("已有存檔進度。確定要開始新遊戲嗎？這將會覆蓋您目前的進度。")) {
+                SaveManager.deleteSave();
+                view.hideOverlay();
+                gameState.startGame();
+            }
+        };
+    } else {
+        startBtn.onclick = () => {
+            view.hideOverlay();
+            gameState.startGame();
+        };
+    }
+
     // Wire up Observer
     gameState.subscribe((event, data) => {
         switch (event) {

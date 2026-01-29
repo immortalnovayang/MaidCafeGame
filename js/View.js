@@ -52,11 +52,8 @@ class View {
             victoryGoal: gameState.victoryGoldGoal
         });
 
-        // Show start modal
-        this.showOverlay("歡迎光臨!", "目標：經營你的女僕咖啡廳！", "開始營業", () => {
-            this.hideOverlay();
-            this.gameState.startGame();
-        });
+        // Setup initial state as paused for the main menu
+        this.gameState.setPaused(true);
 
         // Maid List Button
         if (this.dom.maidListBtn) {
@@ -616,12 +613,15 @@ class View {
         });
 
         // If it's an error, highlight it
-        if (isError) {
-            this.dom.modalContent.querySelector('p').style.color = 'var(--color-accent-pink)';
-            this.dom.modalContent.querySelector('p').style.fontWeight = 'bold';
-        } else {
-            this.dom.modalContent.querySelector('p').style.color = '';
-            this.dom.modalContent.querySelector('p').style.fontWeight = '';
+        const msgEl = this.dom.modalContent.querySelector('#modal-message');
+        if (msgEl) {
+            if (isError) {
+                msgEl.style.color = 'var(--color-accent-pink)';
+                msgEl.style.fontWeight = 'bold';
+            } else {
+                msgEl.style.color = '';
+                msgEl.style.fontWeight = '';
+            }
         }
 
         const container = document.createElement('div');

@@ -50,7 +50,7 @@
         </div>
 
         <!-- Overlays -->
-        <div id="overlay-layer">
+        <div id="overlay-layer" style="display: flex;">
             <div class="modal" id="modal-content">
                 <h2>歡迎光臨《萌萌租約》!</h2>
                 <div class="game-intro-brief" style="text-align: left; margin-bottom: 20px; font-size: 0.9em;">
@@ -61,7 +61,12 @@
                         <li><b>最終目標</b>：在 30 天內達成 $300,000 的營業額！</li>
                     </ul>
                 </div>
-                <button class="btn" id="start-btn">開始營業</button>
+                <div id="modal-message" style="font-size: 1.1em; color: var(--color-text-dark); margin-bottom: 20px;">
+                </div>
+                <button class="btn" id="continue-btn"
+                    style="display: none; margin-bottom: 10px; background-color: var(--color-success-green);">繼續遊戲
+                    (Continue)</button>
+                <button class="btn" id="start-btn">開始新遊戲</button>
             </div>
         </div>
 
@@ -89,6 +94,7 @@
     <script src="js/GameStateDayEnd.js"></script>
     <script src="js/GameStateMaids.js"></script>
     <script src="js/RandomEventManager.js"></script>
+    <script src="js/SaveManager.js"></script>
     <script src="js/GameState.js"></script>
     <script src="js/View.js"></script>
     <script src="js/ViewEntities.js"></script>
