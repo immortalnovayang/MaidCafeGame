@@ -1,0 +1,122 @@
+[
+    {
+        "id": "skill_midori",
+        "name": "極速狂飆",
+        "type": "ACTIVE",
+        "desc": "5 秒內移動速度提升 100%。",
+        "cooldown": 20,
+        "staminaCost": 10,
+        "duration": 5,
+        "activeEmoji": "⚡",
+        "effect": {
+            "stat": "speed",
+            "multiplier": 2.0
+        }
+    },
+    {
+        "id": "skill_lisa",
+        "name": "貴賓接待",
+        "type": "PASSIVE",
+        "desc": "服務的餐點結帳時必獲得 20% 小費。",
+        "effect": {
+            "trigger": "ON_CHECKOUT",
+            "stat": "tipBonus",
+            "value": 0.2
+        }
+    },
+    {
+        "id": "skill_alice",
+        "name": "契約話術",
+        "type": "PASSIVE",
+        "desc": "每週租金談判成功時，租金全免並獲得大量房東贊助金 (天數*500)。",
+        "effect": {
+            "trigger": "RENT_CALC",
+            "stat": "rentDiscountChance",
+            "value": 0.15
+        }
+    },
+    {
+        "id": "skill_pot",
+        "name": "機械優化",
+        "type": "PASSIVE",
+        "desc": "自動化設施（掃地/收銀）效果提升 50%。",
+        "effect": {
+            "trigger": "GLOBAL_BUFF",
+            "stat": "automationEfficiency",
+            "value": 0.5
+        }
+    },
+    {
+        "id": "skill_lulu",
+        "name": "萌萌啾！",
+        "type": "ACTIVE",
+        "desc": "全店客人耐心回復 20 點。",
+        "cooldown": 60,
+        "staminaCost": 10,
+        "activeEmoji": "💖",
+        "effect": {
+            "type": "HEAL_PATIENCE",
+            "target": "ALL_CUSTOMERS",
+            "value": 20
+        }
+    },
+    {
+        "id": "skill_rei",
+        "name": "門神威壓",
+        "type": "PASSIVE",
+        "desc": "排隊客人的耐心下降速度減慢 70%。",
+        "effect": {
+            "trigger": "GLOBAL_BUFF",
+            "stat": "queuePatienceMod",
+            "value": 0.3
+        }
+    },
+    {
+        "id": "skill_kuro",
+        "name": "垃圾就是力量",
+        "type": "PASSIVE",
+        "desc": "每堆垃圾提升 5% 移動與工作效率。",
+        "effect": {
+            "trigger": "DYNAMIC_STAT",
+            "source": "TRASH_COUNT",
+            "stat": "all_efficiency",
+            "multiplier": 0.05
+        }
+    },
+    {
+        "id": "skill_hill",
+        "name": "化學反應",
+        "type": "PASSIVE",
+        "desc": "20% 機率將餐點價值提升 500%。",
+        "effect": {
+            "trigger": "ON_SERVE",
+            "chance": 0.2,
+            "stat": "foodValue",
+            "multiplier": 5.0
+        }
+    },
+    {
+        "id": "skill_nora",
+        "name": "紀律維持",
+        "type": "PASSIVE",
+        "desc": "其他女僕體力消耗減緩 30%。",
+        "effect": {
+            "trigger": "GLOBAL_BUFF",
+            "target": "OTHER_MAIDS",
+            "stat": "staminaDecay",
+            "multiplier": 0.7
+        }
+    },
+    {
+        "id": "skill_jean",
+        "name": "完美全能",
+        "type": "PASSIVE",
+        "desc": "基礎屬性隨店鋪名聲提升。",
+        "effect": {
+            "trigger": "DYNAMIC_STAT",
+            "source": "REPUTATION",
+            "stat": "all_stats",
+            "multiplier": 0.01
+        }
+    }
+]

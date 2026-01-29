@@ -1,0 +1,254 @@
+[
+    {
+        "id": "evt_rain",
+        "type": "ENVIRONMENT",
+        "title": "綿綿陰雨",
+        "desc": "今天下著小雨，路上行人變少了，但進店的客人都很悠閒。",
+        "weight": 20,
+        "minDay": 3,
+        "effects": {
+            "spawnRateMod": -0.3,
+            "patienceDecayMod": 0.5
+        }
+    },
+    {
+        "id": "evt_inflation",
+        "type": "MARKET",
+        "title": "食材漲價",
+        "desc": "市場的雞蛋與牛奶大缺貨，進貨成本變高了。",
+        "weight": 15,
+        "minDay": 3,
+        "effects": {
+            "incomeMod": 0.8
+        }
+    },
+    {
+        "id": "evt_influencer",
+        "type": "MARKET",
+        "title": "網紅探店",
+        "desc": "有位百萬訂閱的美食博主說今天要來直播！(若無人憤怒離開，名聲+50)",
+        "weight": 10,
+        "minDay": 5,
+        "effects": {
+            "spawnRateMod": 0.3,
+            "specialGoal": "NO_ANGRY_LEAVE"
+        }
+    },
+    {
+        "id": "evt_festival",
+        "type": "MARKET",
+        "title": "秋葉原祭典",
+        "desc": "附近的會展開始了，大批御宅族湧入！(女僕小費x2)",
+        "weight": 10,
+        "minDay": 5,
+        "effects": {
+            "tipMod": 2.0,
+            "eatTimeMod": 1.5
+        }
+    },
+    {
+        "id": "evt_hygiene",
+        "type": "CRISIS",
+        "title": "衛生局抽查",
+        "desc": "衛生局長戴著白手套站在門口...(若垃圾>3堆，罰款$1000)",
+        "weight": 10,
+        "minDay": 7,
+        "effects": {
+            "checkTrash": true
+        }
+    },
+    {
+        "id": "evt_salesman",
+        "type": "DECISION",
+        "title": "神祕推銷員",
+        "desc": "嘿老闆，這批『提神飲料』很便宜 ($500)，要買給女僕喝嗎？",
+        "weight": 10,
+        "minDay": 5,
+        "choices": [
+            {
+                "text": "購買 (-$500)",
+                "cost": 500,
+                "action": "salesman_buy"
+            },
+            {
+                "text": "拒絕",
+                "action": "salesman_deny"
+            }
+        ]
+    },
+    {
+        "id": "evt_crazy_wed",
+        "type": "MARKET",
+        "title": "瘋狂星期三",
+        "desc": "本店瘋狂大促銷！雖然單價打折，但人潮洶湧！",
+        "weight": 12,
+        "minDay": 5,
+        "effects": {
+            "spawnRateMod": 0.5,
+            "incomeMod": 0.8
+        }
+    },
+    {
+        "id": "evt_high_tea",
+        "type": "MARKET",
+        "title": "貴婦下午茶",
+        "desc": "今天的客人都是貴婦，出手大方但非常沒有耐心。",
+        "weight": 10,
+        "minDay": 6,
+        "effects": {
+            "patienceDecayMod": 1.5,
+            "incomeMod": 1.5,
+            "spawnRateMod": -0.3
+        }
+    },
+    {
+        "id": "evt_power_out",
+        "type": "CRISIS",
+        "title": "停電驚魂",
+        "desc": "空調壞了！客人們熱得受不了，耐心消耗加倍！",
+        "weight": 8,
+        "minDay": 10,
+        "effects": {
+            "patienceDecayMod": 2.0,
+            "spawnRateMod": -0.2
+        }
+    },
+    {
+        "id": "evt_flu_season",
+        "type": "ENVIRONMENT",
+        "title": "流行性感冒",
+        "desc": "最近流感大爆發，大家都不敢出門了，且進店的客人也因為身體不適而比較煩躁。",
+        "weight": 10,
+        "minDay": 5,
+        "effects": {
+            "patienceDecayMod": 1.2,
+            "spawnRateMod": -0.4,
+            "incomeMod": 0.8
+        }
+    },
+    {
+        "id": "evt_tsundere",
+        "type": "MARKET",
+        "title": "傲嬌主題日",
+        "desc": "「才、才不是特地為了你準備的呢！」女僕們今天走傲嬌路線，雖然客人壓力很大，但抖M客人的賞金也變多了。",
+        "weight": 8,
+        "minDay": 7,
+        "effects": {
+            "patienceDecayMod": 1.6,
+            "tipMod": 2.2
+        }
+    },
+    {
+        "id": "evt_server_down",
+        "type": "MARKET",
+        "title": "手遊維修延長",
+        "desc": "熱門手遊維修炸裂！無家可歸的玩家湧向店裡刷論壇，人潮眾多但大家都沒心情大吃大喝。",
+        "weight": 12,
+        "minDay": 5,
+        "effects": {
+            "spawnRateMod": 0.8,
+            "incomeMod": 0.6
+        }
+    },
+    {
+        "id": "evt_preorder_war",
+        "type": "MARKET",
+        "title": "模型預購聖戰",
+        "desc": "限量模型開賣！客人都在店內搶手速，只要不趕他們走，等再久都沒關係，但他們也完全不想離開位子。",
+        "weight": 6,
+        "minDay": 10,
+        "effects": {
+            "patienceDecayMod": 0.3,
+            "eatTimeMod": 3.5
+        }
+    },
+    {
+        "id": "evt_duelists",
+        "type": "MARKET",
+        "title": "黑暗決鬥者",
+        "desc": "一群桌遊玩家在店裡聚會！雖然消費力驚人，但他們每吃一口餐點前都要先抽一張牌...",
+        "weight": 8,
+        "minDay": 8,
+        "effects": {
+            "eatTimeMod": 2.5,
+            "incomeMod": 1.4
+        }
+    },
+    {
+        "id": "evt_speedrun",
+        "type": "MARKET",
+        "title": "極速挑戰賽",
+        "desc": "店內舉辦極速用餐挑戰！所有進店的人都像在拚 RTA，吃完給錢的速度快到不可思議！",
+        "weight": 10,
+        "minDay": 12,
+        "effects": {
+            "eatTimeMod": 0.3,
+            "spawnRateMod": 0.4
+        }
+    },
+    {
+        "id": "evt_typhoon",
+        "type": "ENVIRONMENT",
+        "title": "強烈颱風",
+        "desc": "全城停班停課，只有你還開著店。客人極少，但躲雨的客人都會點昂貴的餐點且非常感激。",
+        "weight": 5,
+        "minDay": 15,
+        "effects": {
+            "spawnRateMod": -0.9,
+            "incomeMod": 3.0,
+            "patienceDecayMod": 0.1
+        }
+    },
+    {
+        "id": "evt_kaiju",
+        "type": "CRISIS",
+        "title": "巨獸登陸",
+        "desc": "巨大怪獸正在隔壁區破壞！大批逃難人潮湧入，大家都在逃命，耐心幾乎為零！",
+        "weight": 3,
+        "minDay": 20,
+        "effects": {
+            "spawnRateMod": 2.0,
+            "patienceDecayMod": 5.0,
+            "tipMod": 0.2
+        }
+    },
+    {
+        "id": "evt_solar_flare",
+        "type": "ENVIRONMENT",
+        "title": "太陽耀斑",
+        "desc": "強大磁暴讓電子設備全面失效！自動化設備停擺，且沒手機滑的客人變得很煩躁。",
+        "weight": 6,
+        "minDay": 12,
+        "effects": {
+            "disableAutomation": true,
+            "patienceDecayMod": 1.5,
+            "incomeMod": 1.2
+        }
+    },
+    {
+        "id": "evt_pollen",
+        "type": "CRISIS",
+        "title": "劇毒花粉症",
+        "desc": "今年花粉量是一萬倍！每個人都在狂打噴嚏，衛生紙垃圾量倍增，稽查員也盯得很緊。",
+        "weight": 8,
+        "minDay": 10,
+        "effects": {
+            "checkTrash": true,
+            "patienceDecayMod": 1.3,
+            "trashProbMod": 2.5
+        }
+    },
+    {
+        "id": "evt_extreme_cold",
+        "type": "ENVIRONMENT",
+        "title": "地表最強寒流",
+        "desc": "門口結冰了！女僕行動緩慢，客人都縮在店裡取暖不想離開位子。",
+        "weight": 7,
+        "minDay": 15,
+        "effects": {
+            "maidSpeedMod": 0.5,
+            "eatTimeMod": 2.5,
+            "incomeMod": 1.5
+        }
+    }
+]

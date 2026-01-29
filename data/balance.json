@@ -1,0 +1,34 @@
+{
+    "economy": {
+        "tipRatings": {
+            "5": 1.35,
+            "4": 1.10,
+            "2": 0.90,
+            "1": 0.50
+        },
+        "baseOrderValue": 120
+    },
+    "automation": {
+        "roombaInterval": 10,
+        "conveyorBaseTime": 1.0,
+        "potEfficiencyBonus": 0.5,
+        "autoCleanFloor": 0.5,
+        "cookTimeFloor": 0.1,
+        "checkoutFloor": 0.2,
+        "conveyorMaintenanceFee": 200
+    },
+    "queue": {
+        "maxSize": 10,
+        "spacing": 45,
+        "patienceHeal": 20,
+        "baseSpawnInterval": 5.0
+    },
+    "rent": {
+        "negotiationChance": 0.35,
+        "negotiationMultiplier": 0.8,
+        "highRatingThreshold": 4.5,
+        "lowRatingThreshold": 3.0,
+        "highRatingMultiplier": 0.8,
+        "lowRatingPenalty": 1.5
+    }
+}

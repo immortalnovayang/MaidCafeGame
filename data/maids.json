@@ -1,0 +1,112 @@
+[
+    {
+        "id": "maid_midori",
+        "name": "疾風小翠",
+        "color": "#2ecc71",
+        "speed": 150,
+        "maxStamina": 80,
+        "recovery": 5,
+        "salary": 150,
+        "skillId": "skill_midori",
+        "desc": "主動技能：5秒內移動速度 +100% (CD: 20s)。"
+    },
+    {
+        "id": "maid_lisa",
+        "name": "優雅麗莎",
+        "color": "#9b59b6",
+        "speed": 80,
+        "maxStamina": 100,
+        "recovery": 5,
+        "salary": 250,
+        "skillId": "skill_lisa",
+        "desc": "被動技能：服務的餐點結帳時，必定獲得額外 +20% 小費。"
+    },
+    {
+        "id": "maid_alice",
+        "name": "談判專家愛麗絲",
+        "color": "#34495e",
+        "speed": 100,
+        "maxStamina": 90,
+        "recovery": 5,
+        "salary": 300,
+        "skillId": "skill_alice",
+        "desc": "被動技能：提升租金談判成功率。且有 15% 機率觸發大成功：當週租金全免並獲得贊助金 (天數*500)。"
+    },
+    {
+        "id": "maid_pot",
+        "name": "維修娘波特",
+        "color": "#95a5a6",
+        "speed": 70,
+        "maxStamina": 120,
+        "recovery": 8,
+        "salary": 200,
+        "skillId": "skill_pot",
+        "desc": "被動技能：場內所有自動化設施 (掃地機/磁浮收銀) 效率提升 50%。"
+    },
+    {
+        "id": "maid_lulu",
+        "name": "甜心露露",
+        "color": "#e91e63",
+        "speed": 110,
+        "maxStamina": 90,
+        "recovery": 4,
+        "salary": 350,
+        "skillId": "skill_lulu",
+        "desc": "主動技能：瞬間回復全場所有客人 20 點耐心 (CD: 60s)。"
+    },
+    {
+        "id": "maid_rei",
+        "name": "守門員蕾依",
+        "color": "#e74c3c",
+        "speed": 50,
+        "maxStamina": 150,
+        "recovery": 10,
+        "salary": 180,
+        "skillId": "skill_rei",
+        "desc": "被動技能：排隊客人的耐心消耗速度降低 70% (只剩 30% 消耗)。"
+    },
+    {
+        "id": "maid_kuro",
+        "name": "邋遢女孩小黑",
+        "color": "#7f8c8d",
+        "speed": 80,
+        "maxStamina": 100,
+        "recovery": 5,
+        "salary": 100,
+        "skillId": "skill_kuro",
+        "desc": "被動技能：場上每存在一堆垃圾，自身移動與工作速度提升 5%。"
+    },
+    {
+        "id": "maid_hill",
+        "name": "藥劑師希爾",
+        "color": "#8e44ad",
+        "speed": 100,
+        "maxStamina": 100,
+        "recovery": 5,
+        "salary": 280,
+        "skillId": "skill_hill",
+        "desc": "被動技能：送餐時有 20% 機率使該餐點價值翻倍 (x500%)。"
+    },
+    {
+        "id": "maid_nora",
+        "name": "嚴厲主管諾拉",
+        "color": "#2c3e50",
+        "speed": 120,
+        "maxStamina": 200,
+        "recovery": 6,
+        "salary": 350,
+        "skillId": "skill_nora",
+        "desc": "被動技能：減少其他所有女僕的體力消耗 30%。"
+    },
+    {
+        "id": "maid_jean",
+        "name": "店長代理琴恩",
+        "color": "#f1c40f",
+        "speed": 110,
+        "maxStamina": 120,
+        "recovery": 5,
+        "salary": 500,
+        "skillId": "skill_jean",
+        "desc": "被動技能：每 1 點名聲提升 1% 基礎屬性。且每日營業結束額外獲得 +5 名聲。"
+    }
+]

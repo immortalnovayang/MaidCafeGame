@@ -1,0 +1,325 @@
+[
+    {
+        "id": "AUG_SPEED_1",
+        "name": "滑輪保養",
+        "desc": "所有女僕移動速度 +20%",
+        "category": "AUGMENT",
+        "type": "STAT_BOOST",
+        "target": "ALL_MAIDS",
+        "stat": "speed",
+        "value": 20
+    },
+    {
+        "id": "AUG_AD_1",
+        "name": "發傳單",
+        "desc": "客人生成速度加快",
+        "category": "AUGMENT",
+        "type": "GLOBAL_CONFIG",
+        "stat": "spawnRate",
+        "value": -1,
+        "maxStack": 5
+    },
+    {
+        "id": "AUG_WORK_1",
+        "name": "職前訓練",
+        "desc": "所有女僕工作效率提升 (完成速度 +0.5)",
+        "category": "AUGMENT",
+        "type": "STAT_BOOST",
+        "target": "ALL_MAIDS",
+        "stat": "workSpeed",
+        "value": 0.5
+    },
+    {
+        "id": "AUG_SMILE_1",
+        "name": "笑容特訓",
+        "desc": "顧客在店內耐心流失速度 -30%",
+        "category": "AUGMENT",
+        "type": "GLOBAL_CONFIG",
+        "stat": "patienceDecay",
+        "value": 0.7
+    },
+    {
+        "id": "AUG_CHAIR_1",
+        "name": "舒適坐墊",
+        "desc": "客人入座時額外恢復 15 點耐心",
+        "category": "AUGMENT",
+        "type": "GLOBAL_CONFIG",
+        "stat": "seatingRelief",
+        "value": 15
+    },
+    {
+        "id": "AUG_PAY_1",
+        "name": "行動支付",
+        "desc": "結帳排隊時的壓力減半",
+        "category": "AUGMENT",
+        "type": "GLOBAL_CONFIG",
+        "stat": "payStress",
+        "value": 0.5
+    },
+    {
+        "id": "UT_RENT_SHIELD",
+        "name": "租金談判術",
+        "desc": "下一次租金結算即便評價不及標，也以原價計算 (免罰金)",
+        "category": "RARE_UTILITY",
+        "type": "ONE_TIME_BUFF",
+        "stat": "rentShield",
+        "value": 1,
+        "maxStack": 1
+    },
+    {
+        "id": "UT_MOE_FUND",
+        "name": "萌萌基金",
+        "desc": "每日結算時，獲得當前持有金錢 5% 的利息 (複利滾雪球)。",
+        "category": "GLOBAL_CONFIG",
+        "type": "GLOBAL_CONFIG",
+        "stat": "interestRate",
+        "value": 0.05,
+        "maxStack": 1
+    },
+    {
+        "id": "UT_VIRAL_REP",
+        "name": "口碑發酵",
+        "desc": "好評如病毒般擴散，一傳十，十傳百。(每日名聲 +5% 複利)",
+        "category": "GLOBAL_CONFIG",
+        "type": "GLOBAL_CONFIG",
+        "stat": "repInterestRate",
+        "value": 0.05,
+        "maxStack": 1
+    },
+    {
+        "id": "UT_GOLDEN_PLATE",
+        "name": "皇家餐具",
+        "desc": "所有餐飲收入增加 10%，且每 1 點名聲額外提升 0.5% 收入 (名聲流核心)。",
+        "category": "RARE_UTILITY",
+        "type": "GLOBAL_CONFIG",
+        "stat": "incomeMod",
+        "value": 1.1,
+        "maxStack": 1
+    },
+    {
+        "id": "UT_VIP_COUCH",
+        "name": "VIP 紅沙發",
+        "desc": "擴建 VIP 候位區，減緩排隊耐心消耗 50%，且每位排隊客人入座時獲得 +1 名聲。",
+        "category": "RARE_UTILITY",
+        "type": "GLOBAL_CONFIG",
+        "stat": "queuePatienceMod",
+        "value": 0.5,
+        "maxStack": 1
+    },
+    {
+        "id": "REC_LISA",
+        "name": "招募合約：優雅麗莎",
+        "desc": "雇用 優雅麗莎。她能讓顧客開心並給予額外小費。(日薪: $250)",
+        "category": "RECRUITMENT",
+        "type": "UNLOCK_MAID",
+        "targetMaidId": "maid_lisa",
+        "maxStack": 1
+    },
+    {
+        "id": "REC_ALICE",
+        "name": "招募合約：談判專家愛麗絲",
+        "desc": "雇用 談判專家愛麗絲。擅長談判，可爭取租金減免。(日薪: $300)",
+        "category": "RECRUITMENT",
+        "type": "UNLOCK_MAID",
+        "targetMaidId": "maid_alice",
+        "maxStack": 1
+    },
+    {
+        "id": "REC_POT",
+        "name": "招募合約：維修娘波特",
+        "desc": "雇用 維修娘波特。大幅提升自動化設備效率。(日薪: $200)",
+        "category": "RECRUITMENT",
+        "type": "UNLOCK_MAID",
+        "targetMaidId": "maid_pot",
+        "maxStack": 1
+    },
+    {
+        "id": "REC_LULU",
+        "name": "招募合約：甜心露露",
+        "desc": "雇用 甜心露露。擁有全場回復耐心的主動技能。(日薪: $350)",
+        "category": "RECRUITMENT",
+        "type": "UNLOCK_MAID",
+        "targetMaidId": "maid_lulu",
+        "maxStack": 1
+    },
+    {
+        "id": "REC_REI",
+        "name": "招募合約：守門員蕾依",
+        "desc": "雇用 守門員蕾依。如同門神，能大幅減緩排隊耐心消耗。(日薪: $180)",
+        "category": "RECRUITMENT",
+        "type": "UNLOCK_MAID",
+        "targetMaidId": "maid_rei",
+        "maxStack": 1
+    },
+    {
+        "id": "REC_KURO",
+        "name": "招募合約：邋遢女孩小黑",
+        "desc": "雇用 邋遢女孩小黑。越髒越強，依據垃圾數量提升速度。(日薪: $100)",
+        "category": "RECRUITMENT",
+        "type": "UNLOCK_MAID",
+        "targetMaidId": "maid_kuro",
+        "maxStack": 1
+    },
+    {
+        "id": "REC_HILL",
+        "name": "招募合約：藥劑師希爾",
+        "desc": "雇用 藥劑師希爾。有機率製作出高價值的黃金餐點。(日薪: $280)",
+        "category": "RECRUITMENT",
+        "type": "UNLOCK_MAID",
+        "targetMaidId": "maid_hill",
+        "maxStack": 1
+    },
+    {
+        "id": "REC_NORA",
+        "name": "招募合約：嚴厲主管諾拉",
+        "desc": "雇用 嚴厲主管諾拉。管理者光環，減少團隊體力消耗。(日薪: $350)",
+        "category": "RECRUITMENT",
+        "type": "UNLOCK_MAID",
+        "targetMaidId": "maid_nora",
+        "maxStack": 1
+    },
+    {
+        "id": "REC_JEAN",
+        "name": "招募合約：店長代理琴恩",
+        "desc": "雇用 店長代理琴恩。能力隨名聲提升，且每日營業結束額外獲得 +5 名聲。",
+        "category": "RECRUITMENT",
+        "type": "UNLOCK_MAID",
+        "targetMaidId": "maid_jean",
+        "maxStack": 1
+    },
+    {
+        "id": "CHAOS_CONTRACT",
+        "name": "堆填區契約",
+        "desc": "每日結算時，每堆垃圾提供額外 $150 獎勵。",
+        "category": "POLICY",
+        "type": "GLOBAL_CONFIG",
+        "stat": "trashBonus",
+        "value": 150,
+        "maxStack": 1
+    },
+    {
+        "id": "CHAOS_SWATTER",
+        "name": "蒼蠅拍",
+        "desc": "當場上有垃圾時，所有女僕移動速度 +50%。",
+        "category": "AUGMENT",
+        "type": "GLOBAL_CONFIG",
+        "stat": "trashSpeedBoost",
+        "value": 0.5
+    },
+    {
+        "id": "TECH_AUTO_REG",
+        "name": "高速收銀機",
+        "desc": "結帳作業流程極大簡化，速度提升 50%。",
+        "category": "FACILITY",
+        "type": "GLOBAL_CONFIG",
+        "stat": "autoCollectGold",
+        "value": 0.5,
+        "maxStack": 1
+    },
+    {
+        "id": "TECH_CONVEYOR",
+        "name": "磁浮輸送帶",
+        "desc": "廚房餐點自動送達桌位，但機器服務無小費且評價減半，維護費200/日。",
+        "category": "FACILITY",
+        "type": "GLOBAL_CONFIG",
+        "stat": "conveyorBelt",
+        "value": 1,
+        "maxStack": 1
+    },
+    {
+        "id": "TECH_ROOMBA",
+        "name": "虛空掃地機",
+        "desc": "裝載微型黑洞產生器，直接吞噬所有即將產生的廢棄物。(完全不再產生垃圾)",
+        "category": "FACILITY",
+        "type": "GLOBAL_CONFIG",
+        "stat": "roomba",
+        "value": 1,
+        "maxStack": 1
+    },
+    {
+        "id": "TECH_TABLE_7",
+        "name": "備用桌椅",
+        "desc": "在角落硬擠出一張額外的桌子 (+1 桌位)。",
+        "category": "FACILITY",
+        "type": "ONE_TIME_BUFF",
+        "stat": "extraTable",
+        "value": 1,
+        "maxStack": 1
+    },
+    {
+        "id": "TECH_QUEUE_EXT",
+        "name": "超長板凳",
+        "desc": "擴建排隊區，排隊上限人數 +5。",
+        "category": "FACILITY",
+        "type": "GLOBAL_CONFIG",
+        "stat": "maxQueueSize",
+        "value": 5,
+        "maxStack": 5
+    },
+    {
+        "id": "POLICY_STAND_EAT",
+        "name": "站著吃更香",
+        "desc": "客人用餐速度提升 100%，但小費收益減少 50%。",
+        "category": "POLICY",
+        "type": "GLOBAL_CONFIG",
+        "stat": "policyStandEat",
+        "value": 1,
+        "maxStack": 1
+    },
+    {
+        "id": "AUG_STAMINA_BUFF",
+        "name": "能量飲料箱",
+        "desc": "女僕體力低於 20 時，移動與工作速度提升 50%。",
+        "category": "AUGMENT",
+        "type": "GLOBAL_CONFIG",
+        "stat": "lowStaminaBuff",
+        "value": 0.5
+    },
+    {
+        "id": "AUG_BIG_TIP_BOX",
+        "name": "超大小費箱",
+        "desc": "若結帳時客人滿意度 (耐心) > 90%，小費翻倍 (2倍)。",
+        "category": "AUGMENT",
+        "type": "GLOBAL_CONFIG",
+        "stat": "perfectTipBonus",
+        "value": 2
+    },
+    {
+        "id": "AUG_QUEUE_PERF",
+        "name": "街頭女僕表演",
+        "desc": "女僕在店外表演吸引人氣。排隊區每位客人每 5 秒貢獻 +0.1 名聲。",
+        "category": "AUGMENT",
+        "type": "GLOBAL_CONFIG",
+        "stat": "queueRep",
+        "value": 0.1
+    },
+    {
+        "id": "FACILITY_VENDING",
+        "name": "高級自動販賣機",
+        "desc": "擺放在排隊區。所有排隊中的客人，每 5 秒額外貢獻 $15 購買飲料。(可重複累積)",
+        "category": "FACILITY",
+        "type": "GLOBAL_CONFIG",
+        "stat": "queueIncome",
+        "value": 15
+    },
+    {
+        "id": "AUG_INSTANT_ORDER",
+        "name": "自助點餐機",
+        "desc": "客人點餐時間減少 50% (累計兩次變為 0 秒)。",
+        "category": "AUGMENT",
+        "type": "GLOBAL_CONFIG",
+        "stat": "orderTimeReduction",
+        "value": 0.5,
+        "maxStack": 2
+    },
+    {
+        "id": "AUG_INSTANT_EAT",
+        "name": "極速出餐",
+        "desc": "客人用餐時間減少 50% (累計兩次變為 0 秒)。",
+        "category": "AUGMENT",
+        "type": "GLOBAL_CONFIG",
+        "stat": "eatTimeReduction",
+        "value": 0.5,
+        "maxStack": 2
+    }
+]

@@ -1,0 +1,27 @@
+{
+    "initialTables": 1,
+    "trashSpawnChance": 0.3,
+    "eventStartDay": 1,
+    "maxTables": 10,
+    "dayDuration": 60,
+    "initialGold": 1000,
+    "initialReputation": 0,
+    "rentBase": 1000,
+    "rentIncreaseRate": 1.2,
+    "baseMaidSpeed": 200,
+    "baseCustomerSpeed": 500,
+    "customerOrderTime": 2,
+    "customerEatTime": 3,
+    "maidWorkTime_Order": 1,
+    "maidWorkTime_Prep": 1,
+    "maidWorkTime_Clean": 1,
+    "maidIdleRegenRate": 0.5,
+    "upgradeOptionCount": 3,
+    "victoryGoldGoal": 300000,
+    "maxDays": 30,
+    "gameSpeeds": [
+        1,
+        5,
+        30
+    ]
+}

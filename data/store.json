@@ -1,0 +1,64 @@
+[
+    {
+        "id": "STORE_TABLE",
+        "name": "簡約圓桌",
+        "desc": "再增加一張供客人入座的桌子",
+        "type": "FIXED_FACILITY",
+        "effectType": "ADD_ENTITY",
+        "target": "TABLE",
+        "value": 1,
+        "price": 200,
+        "priceMultiplier": 1.1
+    },
+    {
+        "id": "STORE_ENERGY_DRINK",
+        "name": "超強效提神飲料",
+        "desc": "所有女僕體力立刻恢復 50 點",
+        "type": "CONSUMABLE",
+        "effectType": "RECOVER_STAMINA",
+        "value": 50,
+        "price": 50
+    },
+    {
+        "id": "STORE_LUCKY_COIN",
+        "name": "幸運硬幣",
+        "desc": "獲得每回合一次額外的重骰 (Reroll) 機會",
+        "type": "TOOL_UPGRADE",
+        "effectType": "ADD_REROLL",
+        "value": 1,
+        "price": 100,
+        "priceMultiplier": 2
+    },
+    {
+        "id": "STORE_BANISH_SPRAY",
+        "name": "純淨噴霧",
+        "desc": "獲得一次額外的移除 (Banish) 機會",
+        "type": "TOOL_UPGRADE",
+        "effectType": "ADD_BANISH",
+        "value": 1,
+        "price": 150,
+        "priceMultiplier": 1.1
+    },
+    {
+        "id": "STORE_MAID_SPEED",
+        "name": "負重訓練",
+        "desc": "永久提升所有女僕基礎速度 +15%",
+        "type": "MAID_TRAINING",
+        "effectType": "STAT_BOOST",
+        "stat": "speed",
+        "value": 15,
+        "price": 300,
+        "priceMultiplier": 1.1
+    },
+    {
+        "id": "STORE_MAID_WORK",
+        "name": "心靈課程",
+        "desc": "永久提升所有女僕工作效率 +0.2",
+        "type": "MAID_TRAINING",
+        "effectType": "STAT_BOOST",
+        "stat": "workSpeed",
+        "value": 0.2,
+        "price": 350,
+        "priceMultiplier": 1.1
+    }
+]

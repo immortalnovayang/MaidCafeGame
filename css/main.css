@@ -1,0 +1,110 @@
+:root {
+  /* Color Palette - Japanese Maid Cafe Style */
+  --color-primary-pink: #FFC0CB;
+  --color-accent-blue: #ADD8E6;
+  --color-secondary-purple: #E6E6FA;
+  --color-highlight-mint: #98FB98;
+  --color-success-green: #2E7D32;
+  --color-bg-cream: #FDF5E6;
+  --color-text-dark: #4A2C2A;
+
+  /* Layout - 16:9 aspect ratio */
+  --game-aspect-ratio: 16 / 9;
+  --header-height: 50px;
+  --footer-height: 70px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+/* Debug Panel */
+#debug-panel {
+  display: none;
+  position: fixed;
+  top: 50px;
+  right: 20px;
+  width: 300px;
+  max-height: 80vh;
+  background: rgba(0, 0, 0, 0.9);
+  border: 2px solid #00ff00;
+  border-radius: 10px;
+  z-index: 10000;
+  padding: 15px;
+  overflow-y: auto;
+  color: #00ff00;
+  font-family: monospace;
+}
+
+#debug-panel h3 {
+  margin-top: 0;
+  border-bottom: 1px solid #00ff00;
+  padding-bottom: 5px;
+}
+
+.debug-btn {
+  display: block;
+  width: 100%;
+  background: #333;
+  color: #00ff00;
+  border: 1px solid #00ff00;
+  padding: 5px;
+  margin-bottom: 5px;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.85em;
+}
+
+.debug-btn:hover {
+  background: #444;
+}
+
+.btn-small {
+  padding: 3px 8px;
+  font-size: 0.75em;
+  margin-left: 5px;
+  display: inline-block;
+  width: auto;
+}
+
+* {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+/* Black background for letterboxing */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  background-color: #000;
+  /* Black for letterbox bars */
+  color: var(--color-text-dark);
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Game container with fixed 16:9 aspect ratio */
+#app {
+  /* Calculate dimensions to maintain 16:9 while fitting in viewport */
+  width: min(100vw, calc(100vh * 16 / 9));
+  height: min(100vh, calc(100vw * 9 / 16));
+  max-width: 1920px;
+  max-height: 1080px;
+
+  background-color: var(--color-bg-cream);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+
+  /* Subtle shadow to separate from black bars */
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive font sizing based on container */
+#app {
+  font-size: clamp(12px, 1.5vw, 16px);
+}

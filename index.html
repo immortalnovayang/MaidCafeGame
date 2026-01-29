@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>萌萌租約 Maid Cafe Game</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/objects.css">
+    <link rel="stylesheet" href="css/ui.css">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Header: Stats -->
+        <div id="ui-header">
+            <div class="stat-box" data-tooltip="當前營運天數。每 7 天需繳納一次租金。">
+                <span>Day <span id="day-display">1</span></span>
+                <span><span id="timer-display">60</span>s</span>
+            </div>
+            <div class="stat-box" data-tooltip="名聲(Rep)：知名度與口碑。越高則客人進店頻率越高。&#10;滿意度(Avg)：客人的平均星等評價。若低於 2.5 星將面臨罰款。">
+                <span>Rep <span id="rep-display">0</span></span>
+                <span>Avg <span id="rating-display">0.0</span>⭐</span>
+            </div>
+            <div class="stat-box" data-tooltip="目前持有的現金。可用於購買升級、招募女僕或支付租金。">
+                <span>Gold: <span id="gold-display">0</span></span>
+            </div>
+            <div class="stat-box goal-box" data-tooltip="最終目標：在第 30 天結束前賺取超過此金額。">
+                <span>目標: $<span id="victory-goal">300,000</span></span>
+            </div>
+            <div class="stat-box" data-tooltip="女僕管理">
+                <button class="btn-icon" id="maid-list-btn"
+                    style="padding: 0; background: none; border: none; cursor: pointer; display: flex; align-items: center;">
+                    <img src="img/housekeeper.png" alt="Maid Management" style="height: 24px; width: auto;">
+                </button>
+            </div>
+            <div class="stat-box rent-box" data-tooltip="下次扣除租金的時間與金額。若金幣不足，遊戲將直接結束！">
+                <span>下波租金: Day <span id="rent-day-display">7</span> ($<span id="rent-amount-display">500</span>)</span>
+            </div>
+        </div>
+
+        <!-- Main Game View -->
+        <div id="game-area">
+            <!-- Tables and entities will be injected here by JS -->
+
+            <!-- Maid Skill Controls (floating in bottom right) -->
+            <div id="ui-footer">
+                <!-- Maid Cards injected by JS -->
+            </div>
+        </div>
+
+        <!-- Overlays -->
+        <div id="overlay-layer">
+            <div class="modal" id="modal-content">
+                <h2>準備開始營業</h2>
+                <p>目標：在 30 天內賺取足夠租金！</p>
+                <button class="btn" id="start-btn">開始營業</button>
+            </div>
+        </div>
+
+        <div id="maid-list-layer" class="overlay-secondary">
+            <div class="modal-large">
+                <div class="modal-header">
+                    <h2>女僕管理名單</h2>
+                    <button class="close-btn" id="close-maid-list">&times;</button>
+                </div>
+                <div id="maid-list-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/Table.js"></script>
+    <script src="js/Customer.js"></script>
+    <script src="js/Trash.js"></script>
+    <script src="js/Maid.js"></script>
+
+    <!-- GameState Modules -->
+    <script src="js/GameStateEconomy.js"></script>
+    <script src="js/GameStateCustomers.js"></script>
+    <script src="js/GameStateUpgrades.js"></script>
+    <script src="js/GameStateDayEnd.js"></script>
+    <script src="js/GameStateMaids.js"></script>
+    <script src="js/RandomEventManager.js"></script>
+    <script src="js/GameState.js"></script>
+    <script src="js/View.js"></script>
+    <script src="js/ViewEntities.js"></script>
+    <script src="js/ViewOverlays.js"></script>
+    <script src="js/GameLoop.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

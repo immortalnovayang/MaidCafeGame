@@ -1,0 +1,7 @@
+不上傳的項目/
+.gemini/
+.DS_Store
+Thumbs.db
+node_modules/
+dist/
+*.log
